@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trabalhoMicrosfot | Microsoft SQL Server</title>
+    <meta name="description" content="trabalhoMicrosfot da Equipe 3 sobre Microsoft SQL Server, SGBD, arquitetura e T-SQL.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <a class="marca" href="#inicio" aria-label="Bytebase SQL Server - início">
+            <span class="marca-icone">◆</span>
+            <span><strong>BYTE<span>BASE</span></strong><small>Microsoft Data Solutions</small></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <nav class="menu" aria-label="Navegação principal">
+            <a class="ativo" href="#inicio">Início</a>
+            <a href="#modelo">Modelo 3D</a>
+        </nav>
+        <span class="microsoft"><i></i> Microsoft</span>
+    </header>
+
+    <main>
+        <section class="modelo-page" id="modelo">
+            <div class="modelo-cabecalho">
+                <p class="etiqueta">EQUIPE 3 • MICROSOFT DATA SOLUTIONS</p>
+                <h1>Explore o banco de dados.</h1>
+                <p>Gire o servidor e escolha um tópico para entender como o SQL Server mantém seus dados protegidos, rápidos e organizados.</p>
+            </div>
+            <div class="modelo-interface">
+                <aside class="topicos" aria-label="Tópicos do modelo 3D">
+                    <p class="rotulo-painel">NAVEGUE PELO MODELO</p>
+                    <button class="topico ativo" type="button" data-topico="seguranca"><span>01</span><strong>Segurança</strong><small>Proteja seus dados</small></button>
+                    <button class="topico" type="button" data-topico="desempenho"><span>02</span><strong>Desempenho</strong><small>Consulte mais rápido</small></button>
+                    <button class="topico" type="button" data-topico="escala"><span>03</span><strong>Escalabilidade</strong><small>Cresça sem travar</small></button>
+                    <button class="topico" type="button" data-topico="manutencao"><span>04</span><strong>Manutenção</strong><small>Mantenha tudo estável</small></button>
+                    <button class="topico" type="button" data-topico="sql"><span>05</span><strong>T-SQL</strong><small>Veja na prática</small></button>
+                </aside>
+                <div class="modelo-palco">
+                    <div class="mapa-mental" aria-label="Mapa mental dos tópicos do SQL Server">
+                        <button class="no-mapa no-seguranca" type="button" data-mapa="seguranca"><span class="icone-mapa">◈</span><strong>Segurança</strong><small>proteger</small></button>
+                        <button class="no-mapa no-desempenho" type="button" data-mapa="desempenho"><span class="icone-mapa">ϟ</span><strong>Desempenho</strong><small>acelerar</small></button>
+                        <button class="no-mapa no-escala" type="button" data-mapa="escala"><span class="icone-mapa">↗</span><strong>Escala</strong><small>crescer</small></button>
+                        <button class="no-mapa no-manutencao" type="button" data-mapa="manutencao"><span class="icone-mapa">⚙</span><strong>Manutenção</strong><small>organizar</small></button>
+                        <button class="no-mapa no-sql" type="button" data-mapa="sql"><span class="icone-mapa">&lt;/&gt;</span><strong>T-SQL</strong><small>comandar</small></button>
+                        <i class="seta seta-1">↘</i><i class="seta seta-2">↙</i><i class="seta seta-3">↗</i><i class="seta seta-4">↖</i><i class="seta seta-5">↓</i>
+                    </div>
+                    <div class="orbita orbita-1"></div><div class="orbita orbita-2"></div>
+                    <div class="servidor servidor-modelo" aria-label="Modelo 3D interativo do servidor">
+                        <div class="disco disco-1"></div><div class="disco disco-2"></div><div class="disco disco-3"></div>
+                        <span class="servidor-luz luz-1"></span><span class="servidor-luz luz-2"></span><span class="servidor-luz luz-3"></span>
+                    </div>
+                    <div class="controles-3d"><button class="controle-3d" type="button" data-giro="-25" aria-label="Girar para a esquerda">←</button><button class="controle-3d destaque" type="button" data-auto-giro>Girar modelo</button><button class="controle-3d" type="button" data-giro="25" aria-label="Girar para a direita">→</button></div>
+                    <p class="dica-3d">Arraste o modelo para explorar</p>
+                    <div class="janela-topico" id="janela-topico" role="status" aria-live="polite" aria-labelledby="janela-titulo" hidden>
+                        <button class="fechar-janela" type="button" aria-label="Fechar detalhes">&times;</button>
+                        <span class="janela-icone" id="janela-icone">◈</span><span class="janela-label">DETALHE DO MODELO</span>
+                        <h2 id="janela-titulo">Segurança</h2><p id="janela-texto"></p><div id="janela-detalhes"></div>
+                    </div>
+                </div>
+                <article class="painel-info" aria-live="polite">
+                    <p class="status"><i></i> SISTEMA ONLINE</p>
+                    <span class="numero-topico">01 / 05</span>
+                    <h2 id="topico-titulo">Segurança</h2>
+                    <p id="topico-texto">O SQL Server controla quem pode acessar cada informação. Assim, somente pessoas autorizadas conseguem consultar ou alterar os dados.</p>
+                    <div class="detalhes-topico" id="topico-detalhes"><span>CONTROLE DE ACESSO</span><span>CRIPTOGRAFIA</span><span>BACKUP</span></div>
+                    <div class="progresso"><span></span></div>
+                </article>
+            </div>
+            <div class="legenda-icones">
+                <h2>O que cada ícone significa</h2>
+                <div><span><b>◈</b> Segurança: proteção</span><span><b>ϟ</b> Desempenho: velocidade</span><span><b>↗</b> Escala: crescimento</span><span><b>⚙</b> Manutenção: organização</span><span><b>&lt;/&gt;</b> T-SQL: comandos</span></div>
+            </div>
+        </section>
+
+        <section class="hero" id="inicio">
+            <div class="hero-texto">
+                <p class="etiqueta">EQUIPE 3</p>
+                <h1>Site do Dandan</h1>
+                <h2>SQL <span>Server</span></h2>
+                <p>Daniel Ottoi apresenta soluções para dados mais seguros, rápidos e preparados para crescer.</p>
+                <a class="botao-primario" href="#seguranca">Conheça nossa solução <span>→</span></a>
+            </div>
+            <div class="palco-3d">
+                <div class="servidor" aria-label="Modelo 3D interativo de um servidor de banco de dados">
+                    <div class="disco disco-1"></div><div class="disco disco-2"></div><div class="disco disco-3"></div>
+                    <span class="servidor-luz luz-1"></span><span class="servidor-luz luz-2"></span><span class="servidor-luz luz-3"></span>
+                </div>
+                <div class="controles-3d"><button class="controle-3d" type="button" data-giro="-25" aria-label="Girar servidor para a esquerda">←</button><button class="controle-3d destaque" type="button" data-giro="25">Girar servidor</button><button class="controle-3d" type="button" data-giro="25" aria-label="Girar servidor para a direita">→</button></div>
+                <p class="dica-3d">Arraste o servidor ou use os botões</p>
+            </div>
+        </section>
+
+        <div class="principal pricipal">
+            <p class="texto-original">esse site é sobre o primeiro site do Dandan.</p>
+            <button class="botao-secundario" type="button" data-scroll="#demonstracao">Ver demonstração</button>
+        </div>
+
+        <section class="faixa revelar" id="seguranca">
+            <div class="intro"><span class="icone-grande">♢</span><div><h2>Segurança</h2><p>O SQL Server protege seus dados controlando quem pode acessar e o que cada usuário pode fazer.</p></div></div>
+            <div class="cards cards-4">
+                <article class="card"><span class="icone">♙</span><h3>Controle de acesso</h3><p>Só quem tem permissão pode acessar.</p></article>
+                <article class="card"><span class="icone">▣</span><h3>Criptografia</h3><p>Seus dados protegidos em todo o processo.</p></article>
+                <article class="card"><span class="icone">↻</span><h3>Backup</h3><p>Mais segurança em caso de falhas.</p></article>
+                <article class="card"><span class="icone">!</span><h3>Proteção contra acessos indevidos</h3><p>Bloqueia ameaças e ataques.</p></article>
+            </div>
+        </section>
+
+        <section class="faixa revelar" id="desempenho">
+            <div class="intro"><span class="icone-grande">◔</span><div><h2>Desempenho</h2><p>Recursos que tornam suas consultas mais rápidas e eficientes.</p></div></div>
+            <div class="cards cards-3">
+                <article class="card"><span class="icone">▤</span><h3>Índices</h3><p>Como o índice de um livro: encontra rápido o que você precisa.</p></article>
+                <article class="card"><span class="icone">ϟ</span><h3>Consultas mais rápidas</h3><p>Resultados em menos tempo.</p></article>
+                <article class="card"><span class="icone">⚙</span><h3>Otimização</h3><p>Melhor uso dos recursos do sistema.</p></article>
+            </div>
+        </section>
+
+        <section class="faixa revelar" id="escalabilidade">
+            <div class="intro"><span class="icone-grande">▥</span><div><h2>Escalabilidade</h2><p>É a capacidade do sistema de acompanhar o seu crescimento.</p></div></div>
+            <div class="crescimento"><div><strong>100</strong><span>usuários</span></div><b>→</b><div><strong>1.000</strong><span>usuários</span></div><b>→</b><div><strong>10.000+</strong><span>usuários</span></div><article class="crescimento-nota">↗<p>O SQL Server acompanha o aumento de usuários e dados.</p></article></div>
+        </section>
+
+        <section class="faixa revelar" id="manutencao">
+            <div class="intro"><span class="icone-grande">⚙</span><div><h2>Manutenção</h2><p>Mantém o banco funcionando e facilita a recuperação quando algo acontece.</p></div></div>
+            <div class="cards cards-3"><article class="card"><span class="icone">▣</span><h3>Backups</h3><p>Protegem seus dados.</p></article><article class="card"><span class="icone">▱</span><h3>Monitoramento</h3><p>Identifica problemas antes que se tornem graves.</p></article><article class="card"><span class="icone">□</span><h3>Organização</h3><p>Mantém o banco estável e fácil de gerenciar.</p></article></div>
+        </section>
+
+        <section class="faixa demonstracao revelar" id="demonstracao">
+            <div class="intro"><span class="icone-grande">&lt;/&gt;</span><div><h2>Demonstração</h2><p>Veja na prática como o T-SQL simplifica a criação e o gerenciamento do seu banco de dados.</p></div></div>
+            <div class="demo-conteudo"><pre><code><span class="sql-verde">CREATE DATABASE</span> Loja;
+
+<span class="sql-verde">CREATE TABLE</span> Clientes (
+    ID INT,
+    Nome VARCHAR(100)
+);
+
+<span class="sql-rosa">INSERT INTO</span> Clientes (ID, Nome)
+<span class="sql-rosa">VALUES</span> (1, <span class="sql-amarelo">'João'</span>);
+
+<span class="sql-azul">SELECT</span> * <span class="sql-azul">FROM</span> Clientes;</code></pre><div class="explicacoes"><p><b>CREATE DATABASE</b> Cria o banco de dados.</p><p><b>CREATE TABLE</b> Cria uma tabela.</p><p><b>INSERT INTO</b> Adiciona dados.</p><p><b>SELECT</b> Consulta os dados.</p></div></div>
+        </section>
+    </main>
+
+    <footer><strong>BYTE<span>BASE</span></strong><small>Microsoft Data Solutions</small><p>SQL Server + T-SQL<br><small>Dados bem gerenciados, decisões melhores.</small></p><span class="microsoft"><i></i> Microsoft</span></footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
